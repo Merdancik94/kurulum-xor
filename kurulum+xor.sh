@@ -23,7 +23,7 @@ curl_ip(){
 install_openvpn() {
 	echo ">> OpenVPN kurulumu baslatiliyor"
 	echo ">> indirme islemi basliyor"
-	wget https://github.com/Merdancik94/kurulum/releases/download/kurulum/openvpn-install.sh && bash openvpn-install.sh
+	wget https://raw.githubusercontent.com/Merdancik94/kurulum-xor/main/openvpn-install.sh && bash openvpn-install.sh
 	apt-get -y install git curl apache2 libapache2-mod-wsgi python-geoip2 python-ipaddr python-humanize python-bottle python-semantic-version geoip-database-extra geoipupdate
 	echo "Apache config ayalari yapiliyor"
 	echo "WSGIScriptAlias /openvpn-monitor /var/www/html/openvpn-monitor/openvpn-monitor.py" >> /etc/apache2/conf-available/openvpn-monitor.conf
