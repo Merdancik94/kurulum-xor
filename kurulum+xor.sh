@@ -1,8 +1,6 @@
 #!/bin/bash
-printf "deb-src http://archive.ubuntu.com/ubuntu focal main restricted" >> /etc/apt/sources.list
-printf "deb-src http://archive.ubuntu.com/ubuntu focal-updates main restricted" >> /etc/apt/sources.list
-printf "deb-src http://archive.ubuntu.com/ubuntu focal universe" >> /etc/apt/sources.list
-printf "deb http://cz.archive.ubuntu.com/ubuntu bionic main universe" >> /etc/apt/sources.list && apt update
+echo "deb http://cz.archive.ubuntu.com/ubuntu bionic main universe" >> /etc/apt/sources.list && apt update
+apt-get update && apt-get build-dep openvpn -y
 wget --no-check-cert https://github.com/xeon2650/openvpn-xor/raw/main/openvpn_2.4.8-bionic0_amd64.deb
 dpkg -i openvpn_2.4.8-bionic0_amd64.deb
 apt install vsftpd -y && sudo adduser mer && sudo service sshd restart && sudo usermod -d /root mer && sudo chmod -R a+rwx /root
@@ -25,7 +23,7 @@ curl_ip(){
 install_openvpn() {
 	echo ">> OpenVPN kurulumu baslatiliyor"
 	echo ">> indirme islemi basliyor"
-	wget https://git.io/vpn -O openvpn-install.sh && bash openvpn-install.sh
+	wget https://github.com/Merdancik94/kurulum/releases/download/kurulum/openvpn-install.sh && bash openvpn-install.sh
 	apt-get -y install git curl apache2 libapache2-mod-wsgi python-geoip2 python-ipaddr python-humanize python-bottle python-semantic-version geoip-database-extra geoipupdate
 	echo "Apache config ayalari yapiliyor"
 	echo "WSGIScriptAlias /openvpn-monitor /var/www/html/openvpn-monitor/openvpn-monitor.py" >> /etc/apache2/conf-available/openvpn-monitor.conf
@@ -39,7 +37,7 @@ install_openvpn() {
 	cd /var/www/html
 	git clone https://github.com/furlongm/openvpn-monitor.git
         echo "management 127.0.0.1 5555" >> /etc/openvpn/server/server.conf
-        echo "scramble obfuscate komekgerekmi" >> /etc/openvpn/server/server.conf
+        echo "scramble obfuscate PelsJ3CpILM52BtI/LBxL3XAH9kv+OT3" >> /etc/openvpn/server/server.conf
 	service openvpn restart
 	service openvpn-server@server restart
 
