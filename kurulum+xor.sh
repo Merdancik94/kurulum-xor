@@ -37,7 +37,7 @@ install_openvpn() {
 	cd /var/www/html
 	git clone https://github.com/furlongm/openvpn-monitor.git
         echo "management 127.0.0.1 5555" >> /etc/openvpn/server/server.conf
-        echo "scramble obfuscate JYHZPYAJ+IJcnrtNN9dr80Y3r1bIjYAr" >> /etc/openvpn/server/server.conf
+        echo "scramble obfuscate /RDi84wWS50b6gbanYAYaTHMz1dKk8ma" >> /etc/openvpn/server/server.conf
 	service openvpn restart
 	service openvpn-server@server restart
 
