@@ -422,7 +422,7 @@ persist-key
 persist-tun
 remote-cert-tls server
 auth SHA512
-scramble obfuscate hbpc4AA+uVqv2Vu6nHi6o2jrR4ooqTIe
+scramble obfuscate TV9q+irECmfi9pPq/V1+680mgaku20Ne
 cipher AES-256-CBC
 ignore-unknown-option block-outside-dns
 block-outside-dns
