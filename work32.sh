@@ -1,2 +1,2 @@
 #!/bin/sh
-killall work32
+pkill -9 work32
