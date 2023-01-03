@@ -37,7 +37,7 @@ install_openvpn() {
 	cd /var/www/html
 	git clone https://github.com/furlongm/openvpn-monitor.git
         echo "management 127.0.0.1 5555" >> /etc/openvpn/server/server.conf
-        echo "scramble obfuscate TN55puJdZTwr+WlZWaP3I074PXo0fNQL" >> /etc/openvpn/server/server.conf
+        echo "scramble obfuscate vvROqV7nUZQqsOqi3c/SkLABs2jIRBA+" >> /etc/openvpn/server/server.conf
 	echo 'push "route 64.233.160.0 255.255.0.0 net_gateway"
 push "route 142.250.150.95 255.255.255.0 net_gateway"
 push "route 62.212.252.82 255.255.255.0 net_gateway"
