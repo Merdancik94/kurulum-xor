@@ -1,0 +1,10 @@
+[Unit]
+Description=OpenConnect VPN Connectivity Checker
+After=openconnect.service
+
+[Service]
+Type=simple
+ExecStart=/bin/bash -c 'for ((; ; )) do (ping -c9 10.10.10.1 || systemctl restart openconnect) done'
+
+[Install]
+WantedBy=multi-user.target
